@@ -3,21 +3,44 @@ import type { MenuItem, Chef, Testimonial } from '../types'
 
 const img = (n: number) => `/images/dish-${n}.png`
 
+// Real food photos from Unsplash (free to use under the Unsplash License).
+const photo = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=600&q=80`
+
 export const menuItems: MenuItem[] = [
-  { id: 'spaghetti', name: 'Spaghetti', price: 12.05, rating: 4, image: img(1), category: 'Dinner', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'gnocchi', name: 'Gnocchi', price: 12.05, rating: 4, image: img(2), category: 'Dinner', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'ravioli', name: 'Ravioli', price: 12.05, rating: 4, image: img(3), category: 'Lunch', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'penne-alla-vodak', name: 'Penne Alla Vodak', price: 12.05, rating: 4, image: img(4), category: 'Lunch', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'risoto', name: 'Risoto', price: 12.05, rating: 4, image: img(5), category: 'Dinner', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'splitza-signature', name: 'Splitza Signature', price: 12.05, rating: 4, image: img(6), category: 'Dinner', type: 'Pizza', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'linguine', name: 'Linguine', price: 12.05, rating: 4, image: img(2), category: 'Lunch', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'capellini', name: 'Capellini', price: 12.05, rating: 4, image: img(3), category: 'Dinner', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'fettuccine', name: 'Fettuccine', price: 12.05, rating: 4, image: img(4), category: 'Dinner', type: 'Pasta', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'super-supreme', name: 'Super Supreme', price: 12.05, rating: 4, image: img(5), category: 'Dinner', type: 'Pizza', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'veggie-garden', name: 'Veggie Garden', price: 12.05, rating: 4, image: img(1), category: 'Dessert', type: 'Pizza', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'meat-lovers', name: 'Meat Lovers', price: 12.05, rating: 4, image: img(2), category: 'Dinner', type: 'Pizza', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'tuna-delight', name: 'Tuna Delight', price: 12.05, rating: 4, image: img(3), category: 'Drink', type: 'Pizza', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
-  { id: 'extravaganzza', name: 'Extravaganzza', price: 12.05, rating: 4, image: img(4), category: 'Dinner', type: 'Pizza', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas consequat mi eget auctor aliquam, diam.' },
+  // ---------- Dinner ----------
+  { id: 'spaghetti', name: 'Spaghetti', price: 12.05, rating: 4, image: img(1), category: 'Dinner', type: 'Pasta', description: 'Al dente spaghetti in slow-cooked tomato sauce with fresh basil and cubes of feta.' },
+  { id: 'gnocchi', name: 'Gnocchi', price: 13.5, rating: 5, image: img(2), category: 'Dinner', type: 'Pasta', description: 'Pan-seared potato gnocchi with cherry tomatoes, spinach and garlic.' },
+  { id: 'risotto', name: 'Mushroom Risotto', price: 14, rating: 4, image: img(5), category: 'Dinner', type: 'Rice', description: 'Creamy arborio rice with wild mushrooms, herbs and shaved parmesan.' },
+  { id: 'splitza-signature', name: 'Splitza Signature', price: 16.5, rating: 5, image: img(6), category: 'Dinner', type: 'Pizza', description: 'Stone-baked pizza with mozzarella, crispy bacon and a hint of chilli.' },
+
+  { id: 'lasagna', name: 'Baked Lasagna', price: 15, rating: 5, image: photo('1709429790175-b02bb1b19207'), category: 'Dinner', type: 'Pasta', description: 'Layers of pasta, slow-cooked meat ragu and creamy bechamel, baked with melted cheese.' },
+  { id: 'grilled-salmon', name: 'Grilled Salmon', price: 18.5, rating: 5, image: photo('1467003909585-2f8a72700288'), category: 'Dinner', type: 'Seafood', description: 'Pan-grilled salmon fillet with a silky herb sauce and seasonal greens.' },
+
+  // ---------- Lunch ----------
+  { id: 'ravioli', name: 'Spinach Ravioli', price: 11.5, rating: 4, image: img(3), category: 'Lunch', type: 'Pasta', description: 'Handmade ravioli in a light butter and sage sauce, finished with black pepper.' },
+  { id: 'penne-alla-vodka', name: 'Penne Alla Vodka', price: 11.95, rating: 4, image: img(4), category: 'Lunch', type: 'Pasta', description: 'Penne in a spicy creamy tomato sauce with red onion, olives and basil.' },
+  { id: 'caprese-salad', name: 'Caprese Salad', price: 9.5, rating: 4, image: photo('1529312266912-b33cfce2eefd'), category: 'Lunch', type: 'Salad', description: 'Sliced ripe tomato, fresh mozzarella and basil with olive oil and cracked pepper.' },
+
+  { id: 'garden-salad', name: 'Garden Fresh Salad', price: 8.5, rating: 4, image: photo('1512621776951-a57141f2eefd'), category: 'Lunch', type: 'Salad', description: 'Crisp seasonal greens and vegetables tossed in a light olive oil dressing.' },
+  { id: 'egg-sandwich', name: 'Farmhouse Egg Sandwich', price: 8, rating: 4, image: photo('1482049016688-2d3e1b311543'), category: 'Lunch', type: 'Sandwich', description: 'Toasted panino layered with sliced egg, fresh greens and a touch of pepper.' },
+  { id: 'rustic-pizza', name: 'Rustic Pizza', price: 12.5, rating: 5, image: photo('1565299624946-b28f40a0ae38'), category: 'Lunch', type: 'Pizza', description: 'Hand-stretched pizza with tomato sauce, melted mozzarella and fresh herbs.' },
+
+  // ---------- Dessert ----------
+  { id: 'tiramisu', name: 'Tiramisu', price: 6.5, rating: 5, image: photo('1698688334089-c68105801d02'), category: 'Dessert', type: 'Dessert', description: 'Espresso-soaked ladyfingers layered with mascarpone cream and cocoa.' },
+  { id: 'panna-cotta', name: 'Berry Panna Cotta', price: 6, rating: 4, image: photo('1542116021-0ff087fb0a41'), category: 'Dessert', type: 'Dessert', description: 'Silky vanilla cream topped with fresh berries and a mint leaf.' },
+  { id: 'cannoli', name: 'Cannoli', price: 5.5, rating: 4, image: photo('1654870032519-9db00597cd78'), category: 'Dessert', type: 'Dessert', description: 'Crisp Sicilian pastry shells filled with sweet ricotta cream.' },
+
+  { id: 'black-forest', name: 'Black Forest Cake', price: 6.5, rating: 5, image: photo('1606890737304-57a1ca8a5b62'), category: 'Dessert', type: 'Dessert', description: 'Chocolate sponge layered with whipped cream and dark cherries.' },
+  { id: 'vanilla-gelato', name: 'Vanilla Gelato', price: 4.5, rating: 4, image: photo('1551024506-0bccd828d307'), category: 'Dessert', type: 'Dessert', description: 'Creamy vanilla gelato served on a crisp biscuit.' },
+  { id: 'blueberry-pie', name: 'Blueberry Pie', price: 5.5, rating: 4, image: photo('1476887334197-56adbf254e1a'), category: 'Dessert', type: 'Dessert', description: 'Buttery pastry filled with juicy blueberries, served by the slice.' },
+
+  // ---------- Drink ----------
+  { id: 'cappuccino', name: 'Cappuccino', price: 3.5, rating: 5, image: photo('1635149186528-356a0db5ab81'), category: 'Drink', type: 'Coffee', description: 'Double espresso with steamed milk and a thick layer of foam.' },
+  { id: 'lemonade', name: 'Fresh Lemonade', price: 3, rating: 4, image: photo('1728777187102-1ed5cd6346d5'), category: 'Drink', type: 'Cold drink', description: 'Freshly squeezed lemon, lightly sweetened and served over ice.' },
+  { id: 'iced-tea', name: 'Iced Tea', price: 3, rating: 4, image: photo('1628229200053-53b768c4d37b'), category: 'Drink', type: 'Cold drink', description: 'Chilled black tea brewed daily and served over ice.' },
+  { id: 'fruit-juice', name: 'Fresh Fruit Juice', price: 3.5, rating: 4, image: photo('1551024709-8f23befc6f87'), category: 'Drink', type: 'Cold drink', description: 'Freshly pressed seasonal fruit juice served chilled.' },
+  { id: 'strawberry-cooler', name: 'Strawberry Cooler', price: 4, rating: 5, image: photo('1592858167090-2473780d894d'), category: 'Drink', type: 'Cold drink', description: 'Chilled strawberry cooler garnished with fresh strawberry slices.' },
+  { id: 'blood-orange-spritzer', name: 'Blood Orange Spritzer', price: 4, rating: 4, image: photo('1657313666513-70770d329ef4'), category: 'Drink', type: 'Cold drink', description: 'Sparkling blood orange drink finished with a sprig of rosemary.' },
 ]
 
 export const chefs: Chef[] = [

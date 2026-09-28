@@ -70,7 +70,7 @@ export default function ReservationConfirm() {
         <div className="p-6 sm:p-8">
           <h1 className="font-display font-bold text-3xl text-center mt-2">Reservation</h1>
 
-          <div className="bg-[#dff3fb] text-sm rounded-2xl px-5 py-4 mt-6 text-center">
+          <div className="bg-[#dff3fb] text-[#12343f] dark:bg-[#12343f] dark:text-[#dff3fb] text-sm rounded-2xl px-5 py-4 mt-6 text-center">
             Due to limited availability, we can hold this table for you for <strong>5:00 minutes</strong>
           </div>
 

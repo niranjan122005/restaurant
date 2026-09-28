@@ -41,13 +41,15 @@ function ThemeToggle({ className = '' }: { className?: string }) {
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [cartOpen, setCartOpen] = useState(false)
-  const { count } = useCart()
+  const { count, clearCart } = useCart()
   const { isLoggedIn, logout } = useAuth()
   const navigate = useNavigate()
 
   const handleLogout = () => {
     logout()
+    clearCart()
     setOpen(false)
+    setCartOpen(false)
     navigate('/')
   }
 

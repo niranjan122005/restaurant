@@ -19,7 +19,7 @@ export default function FoodCard({ item }: FoodCardProps) {
         <img
           src={item.image}
           alt={item.name}
-          className="w-full h-full object-fill transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
           loading="lazy"
         />
       </div>

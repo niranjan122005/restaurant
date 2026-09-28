@@ -1,5 +1,5 @@
 export type MenuCategory = 'Dinner' | 'Lunch' | 'Dessert' | 'Drink'
-export type MenuType = 'Pasta' | 'Pizza'
+export type MenuType = 'Pasta' | 'Pizza' | 'Rice' | 'Salad' | 'Seafood' | 'Sandwich' | 'Dessert' | 'Coffee' | 'Cold drink'
 
 export interface MenuItem {
   id: string

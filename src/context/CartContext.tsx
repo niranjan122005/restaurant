@@ -7,6 +7,7 @@ interface CartContextValue {
   removeItem: (id: string) => void
   incrementItem: (id: string) => void
   decrementItem: (id: string) => void
+  clearCart: () => void
   count: number
   subtotal: number
   taxFee: number
@@ -53,6 +54,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     )
   }
 
+  const clearCart = () => {
+    setItems([])
+    setVoucherCode('')
+    setVoucherApplied(false)
+  }
+
   const applyVoucher = (code: string) => {
     setVoucherCode(code)
     setVoucherApplied(code.trim().toUpperCase() === VALID_VOUCHER)
@@ -70,6 +77,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     removeItem,
     incrementItem,
     decrementItem,
+    clearCart,
     count,
     subtotal,
     taxFee,
